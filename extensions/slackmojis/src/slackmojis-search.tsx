@@ -50,11 +50,16 @@ export default function Command() {
           actions={
             <ActionPanel>
               <Action
+                icon={Icon.Download}
+                title="Download"
+                onAction={() => downloadFile(image_url, name)}
+              />
+              <Action
                 icon={Icon.Clipboard}
                 title="Copy to Clipboard"
                 onAction={() => copyFileToClipboard(image_url, name)}
+                shortcut={{ modifiers: ["cmd"], key: "return" }}
               />
-              <Action icon={Icon.Download} title="Download" onAction={() => downloadFile(image_url, name)} />
             </ActionPanel>
           }
         />
