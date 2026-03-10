@@ -195,6 +195,9 @@ async function getTabsJXA(): Promise<Tab[]> {
           }
         } catch(e) {}
       }
+      if (wins.length > 0 && tabs.length === 0) {
+        throw new Error("JXA could not read tabs");
+      }
       return JSON.stringify(tabs);
     })()
   `;
